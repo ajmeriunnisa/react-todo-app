@@ -1,6 +1,6 @@
 #  To-Do List Application (React + Vite)
 
-This is a simple and responsive **To-Do List Application** built using **React** with **Vite**.  
+This is a simple **To-Do List Application** built using **React** with **Vite**.  
 It allows users to **add**, **edit**, **delete**, and **mark tasks as completed** easily.
 
 ---
