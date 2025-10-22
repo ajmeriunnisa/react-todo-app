@@ -23,13 +23,26 @@ function ToDoItem({ task, onDelete, onToggle, onEdit }) {
                     onChange={(e) => setEditText(e.target.value)}
                 />
             ) : (
-                <span
-                    className={task.completed ? "completed" : ""}
-                    onClick={() => onToggle(task.id)}
-                >
-                    {task.text}
-                </span>
-            )}
+                <div className="task-text">
+                    <input
+                        type="checkbox"
+                        checked={task.completed}
+                        onChange={() => onToggle(task.id)}
+                    />
+                    {isEditing ? (
+                        <input
+                            type="text"
+                            value={editText}
+                            onChange={(e) => setEditText(e.target.value)}
+                        />
+                    ) : (
+                        <span className={task.completed ? "completed" : ""}>
+                            {task.text}
+                        </span>
+                    )}
+                </div>
+            )
+            }
 
             <div>
                 <button className='edit-btn' onClick={handleEdit}>
@@ -40,7 +53,7 @@ function ToDoItem({ task, onDelete, onToggle, onEdit }) {
                     Delete
                 </button>
             </div>
-        </li>
+        </li >
     );
 }
 
