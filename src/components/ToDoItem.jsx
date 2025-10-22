@@ -16,6 +16,14 @@ function ToDoItem({ task, onDelete, onToggle, onEdit }) {
 
     return (
         <li className='todo-item'>
+            <div className="task-text">
+                {!isEditing&&(
+                    <input
+                        type="checkbox"
+                        checked={task.completed}
+                        onChange={() => onToggle(task.id)}
+                    />
+                )}
             {isEditing ? (
                 <input
                     type="text"
@@ -23,28 +31,13 @@ function ToDoItem({ task, onDelete, onToggle, onEdit }) {
                     onChange={(e) => setEditText(e.target.value)}
                 />
             ) : (
-                <div className="task-text">
-                    <input
-                        type="checkbox"
-                        checked={task.completed}
-                        onChange={() => onToggle(task.id)}
-                    />
-                    {isEditing ? (
-                        <input
-                            type="text"
-                            value={editText}
-                            onChange={(e) => setEditText(e.target.value)}
-                        />
-                    ) : (
-                        <span className={task.completed ? "completed" : ""}>
+                    <span className={task.completed ? "completed" : ""}>
                             {task.text}
-                        </span>
+                    </span>
                     )}
                 </div>
-            )
-            }
 
-            <div>
+            <div className='button-grp'>
                 <button className='edit-btn' onClick={handleEdit}>
                     {isEditing ? "Save" : "Edit"}
                 </button>

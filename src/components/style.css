@@ -37,6 +37,8 @@ header {
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 /* Input and Add button */
@@ -84,6 +86,10 @@ header {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  gap: 10px;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .todo-item span {
@@ -126,13 +132,26 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .task-text input[type="checkbox"] {
   transform: scale(1.2);
   color: #4a90e2; 
   cursor: pointer;
+}
 
+.edit-input{
+  flex-grow: 1;
+}
+
+.button-grp{
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
 }
 
 /* Responsive Design */
