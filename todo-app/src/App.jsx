@@ -5,60 +5,60 @@ import "./components/style.css";
 
 function App() {
 
-  const [tasks,setTasks]=useState([]);
-  const [newTask,setNewTask]=useState("");
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
 
-  const handleAddTask=()=>{
-    if(newTask.trim()==="")return;
+  const handleAddTask = () => {
+    if (newTask.trim() === "") return;
     setTasks([
       ...tasks,
-      {id:Date.now(),text:newTask,completed:false}
+      { id: Date.now(), text: newTask, completed: false }
     ]);
     setNewTask("");
   };
 
-  const handleDeleteTask=(id)=>{
-    setTasks(tasks.filter((task)=>task.id!==id));
+  const handleDeleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const handleToggleComplete=(id)=>{
+  const handleToggleComplete = (id) => {
     setTasks(
-      tasks.map((task)=>
-      task.id===id ? {...task,completed : !task.completed} : task
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
   };
 
-  const handleEditTask=(id,newText)=>{
+  const handleEditTask = (id, newText) => {
     setTasks(
-      tasks.map((task)=>task.id===id ? {...task,text:newText} : task
-    )
+      tasks.map((task) => task.id === id ? { ...task, text: newText } : task
+      )
     );
   };
 
   return (
     <div className='app-container'>
-      <Header/>
+      <Header />
       <div className='todo-box'>
         <div className='input-container'>
-          <input 
+          <input
             type='text'
             placeholder='Enter new Task...'
             value={newTask}
-            onChange={(e)=>setNewTask(e.target.value)}
-            />
-            <button onClick={handleAddTask}>
-              Add
-            </button>
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button onClick={handleAddTask}>
+            Add
+          </button>
         </div>
 
-        <ToDoList 
+        <ToDoList
           tasks={tasks}
           onDelete={handleDeleteTask}
           onToggle={handleToggleComplete}
           onEdit={handleEditTask}
         />
-      </div> 
+      </div>
     </div>
   )
 }
