@@ -1,6 +1,6 @@
 #  To-Do List Application (React + Vite)
 
-This is a simple **To-Do List Application** built using **React** with **Vite**.  
+This is a simple and responsive **To-Do List Application** built using **React** with **Vite**.  
 It allows users to **add**, **edit**, **delete**, and **mark tasks as completed** easily.
 
 ---
@@ -11,7 +11,7 @@ It allows users to **add**, **edit**, **delete**, and **mark tasks as completed*
 * Delete existing tasks  
 * Mark tasks as completed using a checkbox   
 * Edit task text inline  
-* User-friendly UI  
+* Responsive and User-friendly UI  
 * Built using React functional components, state, and props  
 
 ---
