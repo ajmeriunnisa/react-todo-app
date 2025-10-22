@@ -1,0 +1,138 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the app */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #20d8e6;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Main ToDo box */
+.todo-box {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Input and Add button */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-container input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-container button {
+  padding: 10px 15px;
+  background-color: #20d8e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.input-container button:hover {
+  background-color: #20d8e6;
+}
+
+/* ToDo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ToDo Item */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.todo-item span {
+  cursor: pointer;
+}
+
+.todo-item span.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Buttons inside ToDoItem */
+.todo-item button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 550;
+}
+
+.todo-item button.edit-btn {
+  background-color: #ffc107;
+}
+
+.todo-item button.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.todo-item button.delete-btn {
+  background-color: #e63946;
+}
+
+.todo-item button.delete-btn:hover {
+  background-color: #b71c1c;
+}
+
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-text input[type="checkbox"] {
+  transform: scale(1.2);
+  color: #4a90e2; 
+  cursor: pointer;
+}
+
+
+
